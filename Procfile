@@ -1,0 +1,1 @@
+web: java -jar build/libs/grailsApp-0.1.war
