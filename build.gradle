@@ -78,6 +78,13 @@ task stage(dependsOn: [build]) {
 
 stage.mustRunAfter(clean)
 
+task copyToLib(type: Copy) {
+    into "$buildDir/lib"
+    from(configurations.compile)
+}
+
+stage.dependsOn(copyToLib)
+
 clean << {
     project.file('app.jar').delete()
 }
