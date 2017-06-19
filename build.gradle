@@ -70,13 +70,12 @@ assets {
     minifyCss = true
 }
 
-task stage(type: Copy, dependsOn: [clean, build]) {
-    from jar.archivePath
-    into project.rootDir 
-    rename {
-        'app.jar'
-    }
+task stage(type: Copy, dependsOn: [build]) {
+    from 'build/libs/grailsApp-0.1.war'
+    into './' 
+	
 }
+
 stage.mustRunAfter(clean)
 
 clean << {
