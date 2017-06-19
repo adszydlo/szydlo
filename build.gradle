@@ -58,6 +58,7 @@ dependencies {
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
 }
 
+
 bootRun {
     jvmArgs('-Dspring.output.ansi.enabled=always')
     addResources = true
